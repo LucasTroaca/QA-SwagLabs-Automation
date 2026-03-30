@@ -1,0 +1,30 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Repository
+        uses: actions/checkout@v4
+
+      - name: Download Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Install Browsers
+        run: |
+          playwright install --with-deps
+
+      - name: Run Tests
+        run: |
+          pytest -v --maxfail=1
