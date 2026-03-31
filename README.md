@@ -17,7 +17,7 @@ This project demonstrates UI test automation using:
 - Flows layer abstracts user actions into reusable business processes
 - Configuration is centralized to simplify environment management
 
-## Tech Stack
+## Technologies
 - Python
 - Pytest
 - Playwright
